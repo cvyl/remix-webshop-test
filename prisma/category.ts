@@ -7,13 +7,18 @@ export const getAllCategories = async () => {
     return await db.category.findMany();
    };
 
+
 export const getCategoryById = async (categoryId: number) => {
     return await db.category.findUnique({
-        where: {
-            id: categoryId
-        }
+      where: {
+        id: categoryId,
+      },
+      include: {
+        products: true,
+      },
     });
-};
+  };
+  
 
 export const createCategory = async (category: CategoryListInterface) => {
     return await db.category.create({

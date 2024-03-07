@@ -13,26 +13,29 @@ export default function ProductDetailData() {
   const params = useParams(); // Add this line to get the params
 
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <p>{product.description}</p>
-      <p>{product.price}</p>
-      <img src={product.image} alt={product.name} />
-      <p>Product Number: {params.id}</p>
+    <div className="max-w-2xl mx-auto p-4 bg-white rounded-lg shadow-md">
+      <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+      <p className="mb-2">{product.description}</p>
+      <p className="mb-4">${product.price}</p>
+      <img className="w-full h-auto mb-4" src={product.image} alt={product.name} />
+      <p className="mb-4">Product Number: {params.id}</p>
 
-    <Form>
-      <a href={`/product/edit/${params.id}`}><button>Edit</button></a>
-    </Form>
+      <Form>
+        <a href={`/product/edit/${params.id}`} className="bg-blue-500 text-white py-2 px-4 rounded-md inline-block mb-4 hover:shadow-lg transform transition duration-300">
+          Edit
+        </a>
+      </Form>
 
-    <Form method="post">
-      <button type="submit">Delete</button>
-    </Form>
+      <Form method="post">
+        <button type="submit" className="bg-red-500 text-white py-2 px-4 rounded-md inline-block hover:shadow-lg transform transition duration-300">
+          Delete
+        </button>
+      </Form>
     </div>
   );
 }
 
-export const action: ActionFunction = async ({params}) => {
+export const action: ActionFunction = async ({ params }) => {
   await deleteProduct(Number(params.id));
   return redirect("/products");
 }
-

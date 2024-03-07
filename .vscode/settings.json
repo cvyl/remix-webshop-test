@@ -1,3 +1,13 @@
 {
-    "explorer.compactFolders": false
+    "explorer.compactFolders": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",      
+    },
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap":"on",
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "prettierignore": "ignore",
+    },
 }

@@ -10,6 +10,9 @@ import {
     ScrollRestoration,
 } from '@remix-run/react'
 
+import Header from './components/Header'
+import Footer from './components/Footer'
+
 export const links: LinksFunction = () => [
     ...(styles ? [{ rel: 'stylesheet', href: styles }] : []),
 ]
@@ -27,10 +30,12 @@ export default function App() {
                 <Links />
             </head>
             <body>
+                <Header />
                 <Outlet />
                 <ScrollRestoration />
                 <Scripts />
                 <LiveReload />
+                <Footer />
             </body>
         </html>
     )

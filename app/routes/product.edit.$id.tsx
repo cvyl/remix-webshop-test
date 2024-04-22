@@ -60,6 +60,7 @@ export default function Edit() {
                     <label className="block text-gray-700">Price</label>
                     <input
                         type="number"
+                        min="0"
                         name="price"
                         required
                         defaultValue={product.price}

@@ -47,6 +47,7 @@ export default function Create() {
                     <label className="block text-gray-700">Price</label>
                     <input
                         type="number"
+                        min="0"
                         name="price"
                         required
                         className="w-full px-4 py-2 border rounded-md bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"

@@ -10,6 +10,9 @@ import {
 import { getCategoryById } from 'prisma/category'
 import type { Product } from './products.enum'
 
+
+
+
 export const loader: LoaderFunction = async ({
     params,
 }: LoaderFunctionArgs) => {

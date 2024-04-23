@@ -1,7 +1,8 @@
-import { PrismaClient } from "@prisma/client";
+import {prisma} from "~/lib/prisma"
+
 import { CategoryListInterface  } from "../app/routes/categories.enum"; // Replace "~/routes/products.enum" with the correct file path
 
-const db = new PrismaClient();
+const db = prisma;
 
 export const getAllCategories = async () => {
     return await db.category.findMany();

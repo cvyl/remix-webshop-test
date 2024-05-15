@@ -73,14 +73,6 @@ export const deleteProduct = async (productId: number) => {
     });
     };
 
-export const deleteCategory = async (categoryId: number) => {
-    return await db.category.delete({
-    where: {
-        id: categoryId
-    }
-    });
-    };
-
 export const _createProduct = async (product: ProductListInterface) => {
     return await db.product.create({
     data: {

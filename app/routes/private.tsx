@@ -29,6 +29,7 @@ export default function Screen() {
 
     <h1>{profile.displayName}</h1>
         <img src={profile.photos[0].value} alt={profile.displayName} />
+        <span>{profile._json.location}</span>
 
       <pre>
         <code>{JSON.stringify(profile, null, 2)}</code>
